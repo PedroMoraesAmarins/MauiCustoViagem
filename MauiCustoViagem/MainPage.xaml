@@ -5,48 +5,28 @@
              Title="Custo da Viagem">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+        <StackLayout>
 
-            <Label
-                Text="Informe:"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+            <Label Text="Origem:" />
+            <Entry x:Name="txt_origem"/>
 
-            <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*, *, *, *, *" ColumnDefinitions="150, *" RowSpacing="15">
+            <Label Text="Destino:" />
+            <Entry BindingContext="destino" x:Name="txt_destino" />
 
-                <Label Grid.Row="0" Grid.Column="0" Text="Origem:" Style="{StaticResource SubHeadline}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Entry x:Name="etyOrigem" Grid.Row="0" Grid.Column="1" />
+            <Label Text="Distancia" />
+            <Entry BindingContext="distancia" x:Name="txt_distancia" />
 
-                <Label Grid.Row="1" Grid.Column="0" Text="Destino:" Style="{StaticResource SubHeadline}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Entry x:Name="etyDestino" Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Rendimento" />
+            <Entry BindingContext="rendimento" x:Name="txt_rendimento" />
 
-                <Label Grid.Row="2" Grid.Column="0" Text="Distância:" Style="{StaticResource SubHeadline}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Entry x:Name="etyDistancia" Grid.Row="2" Grid.Column="1"/>
+            <Label Text="Preço Combustivel" />
+            <Entry BindingContext="valor_combustivel" x:Name="txt_combustivel" />
 
-                <Label Grid.Row="3" Grid.Column="0" Text="Rendimento:" Style="{StaticResource SubHeadline}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Entry x:Name="etyRendimento" Grid.Row="3" Grid.Column="1"/>
+            <Button Margin="5" x:Name="btn_createPedagio" Text="Adicionar pedagio" Clicked="btn_createPedagio_Clicked"/>
+            <Button Margin="5" x:Name="btn_listPedagio" Text="Lista pedagio" Clicked="btn_listPedagio_Clicked"/>
+            <Button Margin="5" x:Name="btn_calcular" Text="Calcular" Clicked="btn_calcular_Clicked"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Text="Combustível:" Style="{StaticResource SubHeadline}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Entry x:Name="etyCombustivel" Grid.Row="4" Grid.Column="1"/>
-
-            </Grid>
-
-            <Button 
-                x:Name="btnCalcula"
-                Text="Calcular Custo"
-                Clicked="Button_Clicked"
-                HorizontalOptions="Fill"/>
-
-
-
-        </VerticalStackLayout>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
