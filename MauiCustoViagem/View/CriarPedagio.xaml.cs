@@ -25,4 +25,9 @@ public partial class CriarPedagio : ContentPage
             await DisplayAlert("Erro", ex.Message, "Ok");
         }
     }
+
+    private void btn_voltar_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new MainPage());
+    }
 }
